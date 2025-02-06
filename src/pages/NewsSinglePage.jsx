@@ -35,11 +35,11 @@ export default function NewsSinglePage() {
 
   return (
     <>
-      <div>
-        <Link to={"/"} className=" ">
+      <div className="w-11/12 mx-auto max-w-[1100px]">
+        <Link to={"/"} className=" relative md:absolute  top-22 left-14 mb-10">
           <FaArrowLeftLong
             size={20}
-            className="hover:bg-primary-100 bg-transparent text-primary hover:text-white h-5 md:h-10 w-10 rounded-full px-3   sticky top-16 md:top-26 md:left-10 left-4 cursor-pointer border border-primary"
+            className="hover:bg-primary-100 md:bg-primary bg-transparent text-primary md:text-white md:hover:text-primary hover:text-white h-5 md:h-10  w-10 md:rounded-sm rounded-full px-3  sticky top-16  left-4 cursor-pointer border border-primary"
           />
         </Link>
         <div className="max-w-4xl mx-auto my-10 p-5 bg-white shadow-lg rounded-sm">
