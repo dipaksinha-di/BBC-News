@@ -2,10 +2,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white text-center py-4">
+    <footer className="bg-primary w-full text-white text-center py-4">
       <p className="text-sm">
-        © {new Date().getFullYear()} All Rights Reserved | Developed by{" "}
-        <span className="text-red-500 font-semibold">Dipak Kumar Sinha</span>
+        © {new Date().getFullYear()} All Rights Reserved
       </p>
     </footer>
   );
