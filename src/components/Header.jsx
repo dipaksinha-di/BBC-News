@@ -24,9 +24,9 @@ const Header = ({ setCategory, setSearchQuery }) => {
   };
 
   return (
-    <header className="bg-red-600 text-white px-2 md:px-6 py-1 md:py-5 flex justify-between items-center w-full sticky top-0 left-0 z-50">
+    <header className="bg-primary text-white px-2 md:px-6 py-1 md:py-5 flex justify-between items-center w-full sticky top-0 left-0 z-50">
       <Link to="/" className="text-xl md:text-3xl font-bold">
-        BBC News
+        NEWS
       </Link>
       <nav className="hidden md:flex space-x-4">
         {navItems.map((item, index) => {

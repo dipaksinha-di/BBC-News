@@ -1,8 +1,14 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import NewsSinglePage from "./pages/NewsSinglePage";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   const [category, setCategory] = useState("");
@@ -26,6 +32,7 @@ function App() {
         />
         <Route path="/news/:id" element={<NewsSinglePage />} />
       </Routes>
+      <Footer/>
     </Router>
   );
 }
