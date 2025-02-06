@@ -34,7 +34,7 @@ export default function ScrollToTop() {
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-15 right-6 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary-100 transition duration-300"
+          className="fixed bottom-15 right-6 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary-100 border border-primary hover:text-primary transition duration-300"
         >
           <FaArrowUp size={20} />
         </button>

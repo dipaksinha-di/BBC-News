@@ -24,7 +24,7 @@ const Header = ({ setCategory, setSearchQuery }) => {
   };
 
   return (
-    <header className="bg-primary text-white px-2 md:px-6 py-1 md:py-5 flex justify-between items-center w-full sticky top-0 left-0 z-50">
+    <header className="bg-primary text-white px-2 md:px-6 py-3 md:py-5 flex justify-between items-center w-full sticky top-0 left-0 z-50 shadow-2xl">
       <Link to="/" className="text-xl md:text-3xl font-bold">
         NEWS
       </Link>
@@ -38,8 +38,8 @@ const Header = ({ setCategory, setSearchQuery }) => {
                 setCategory(item);
                 navigate(`/${item.toLowerCase()}`);
               }}
-              className={`text-lg md:text-xl relative ${
-                isActive ? "font-semibold " : "hover:underline"
+              className={`text-lg  uppercase relative ${
+                isActive ? "font-semibold  " : "hover:underline underline-offset-8"
               }`}
             >
               {item}
@@ -68,7 +68,7 @@ const Header = ({ setCategory, setSearchQuery }) => {
       {isMobileMenuOpen && (
         <div className="fixed top-0 left-0 w-full h-full bg-red-600 flex flex-col items-center justify-center md:hidden transition-transform transform translate-x-0 overflow-y-auto">
           <FaTimes
-            className="text-2xl cursor-pointer"
+            className="text-5xl cursor-pointer"
             onClick={() => setIsMobileMenuOpen(false)}
           />
           <nav className="flex flex-col space-y-1 mt-4">
@@ -82,7 +82,7 @@ const Header = ({ setCategory, setSearchQuery }) => {
                     setIsMobileMenuOpen(false);
                     navigate(`/${item.toLowerCase()}`);
                   }}
-                  className={`text-2xl ${
+                  className={`text-2xl my-6 ${
                     isActive ? "font-semibold " : "hover:underline"
                   }`}
                 >

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { newsData } from "../data/data";
-import Loader from '../components/Loader'
+import Loader from "../components/Loader";
 import ScrollToTop from "../components/ScrollToTop";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 export default function NewsSinglePage() {
   const { id } = useParams();
@@ -16,7 +17,7 @@ export default function NewsSinglePage() {
   }, [id]);
 
   if (!article) {
-    return <Loader/>;
+    return <Loader />;
   }
 
   const {
@@ -34,33 +35,41 @@ export default function NewsSinglePage() {
 
   return (
     <>
-      <div className="max-w-4xl mx-auto my-10 p-5 bg-white shadow-lg rounded-sm">
-        <h1 className="text-3xl font-bold mt-5  ">{title}</h1>
-        <p className="text-sm my-4 text-dark-500"> 2 hours ago </p>
-        <p className="font-bold my-2">{authorName}</p>
-        <img
-          src={fullDetailImage ? fullDetailImage : defaultImage}
-          alt={title}
-          className="w-full h-80 object-cover rounded-sm border  border-dark-200"
-        />
-        {/* <span>Category: {category}</span> */}
+      <div>
+        <Link to={"/"} className=" ">
+          <FaArrowLeftLong
+            size={20}
+            className="hover:bg-primary-100 bg-transparent text-primary hover:text-white h-5 md:h-10 w-10 rounded-full px-3   sticky top-16 md:top-26 md:left-10 left-4 cursor-pointer border border-primary"
+          />
+        </Link>
+        <div className="max-w-4xl mx-auto my-10 p-5 bg-white shadow-lg rounded-sm">
+          <h1 className="text-3xl font-bold mt-5  ">{title}</h1>
+          <p className="text-sm my-4 text-dark-500"> 2 hours ago </p>
+          <p className="font-bold my-2">{authorName}</p>
+          <img
+            src={fullDetailImage ? fullDetailImage : defaultImage}
+            alt={title}
+            className="w-full h-80 object-cover rounded-sm border  border-dark-200"
+          />
+          {/* <span>Category: {category}</span> */}
 
-        {description.map((desc, index) => (
-          <p key={index} className="text-gray-700 text-lg mt-3">
-            {desc}
-          </p>
-        ))}
-        <p className="text-gray-700 text-lg  flex flex-wrap gap-2 my-10">
-          <span>Related Tags:</span>
-          {relatedTags.map((tag) => (
-            <p className="px-2 py-1 bg-dark-50 text-dark-600 cursor-pointer">
-              {" "}
-              {tag}{" "}
+          {description.map((desc, index) => (
+            <p key={index} className="text-gray-700 text-lg mt-3">
+              {desc}
             </p>
           ))}
-        </p>
+          <p className="text-gray-700 text-lg  flex flex-wrap gap-2 my-10">
+            <span>Related Tags:</span>
+            {relatedTags.map((tag) => (
+              <p className="px-2 py-1 bg-dark-50 text-dark-600 cursor-pointer">
+                {" "}
+                {tag}{" "}
+              </p>
+            ))}
+          </p>
+        </div>
+        <ScrollToTop />
       </div>
-      <ScrollToTop/>
     </>
   );
 }
